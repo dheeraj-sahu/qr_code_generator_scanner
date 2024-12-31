@@ -4,126 +4,8 @@ Generate QR Code
 {% endblock title %}
 
 {% block content %}
-<style>
-    /* General Reset */
-    body, h1, h2, ul, li, form, input, button, img, a {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-    }
+  
 
-    /* Body Styling */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
-    }
-
-    /* Centered Container */
-    .center-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        padding: 20px;
-        background-color: #f9f9f9;
-    }
-
-    /* Form Container */
-    .container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 500px;
-        text-align: center;
-    }
-
-    /* Heading */
-    h1 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    /* Input Fields */
-    input[type="text"] {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-size: 16px;
-        color: #333;
-        outline: none;
-        transition: border-color 0.3s ease;
-    }
-
-    input[type="text"]:focus {
-        border-color: #007bff;
-    }
-
-    /* Button */
-    button {
-        width: 100%;
-        padding: 12px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-        background-color: #0056b3;
-    }
-
-    /* QR Preview Section */
-    .qr-preview {
-        margin-top: 20px;
-    }
-
-    .qr-preview img {
-        max-width: 100%;
-        height: auto;
-        margin-top: 10px;
-    }
-
-    .download-button {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border-radius: 5px;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
-
-    .download-button:hover {
-        background-color: #218838;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 600px) {
-        .container {
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        button {
-            font-size: 16px;
-        }
-    }
-</style>
 
 <div class="center-container">
     <div class="container">
@@ -134,7 +16,6 @@ Generate QR Code
             <input type="text" name="qr_data" placeholder="Enter text to generate QR Code" required>
             <button type="submit">Generate</button>
         </form>
-
         <div class="qr-preview">
             {% if qr_image_url %}
             <h2>Your QR Code:</h2>
