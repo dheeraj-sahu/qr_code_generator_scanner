@@ -107,7 +107,7 @@ Start the Django server to run the application locally.
 
 
 ***Scan QR Code***
- ```bash
+    ```bash
       Navigate to the Scan QR Code page.
 
       Upload a QR code image and provide the mobile number.
@@ -120,8 +120,8 @@ Start the Django server to run the application locally.
 
 
 
-
 ### Keywords:
+
 ```bash
 - QR Code
 - Django
