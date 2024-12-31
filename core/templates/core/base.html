@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+    <style>
+        /* General Reset */
+        body, h1, ul, li, a, img, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: -20px -20px 0px -20px;
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav .left .logo img {
+            height: 50px;
+            border-radius: 100%;
+        }
+
+        nav .left .brand {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+        }
+        nav .brand{
+        }
+
+        nav .right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav .right li {
+            display: inline-block;
+        }
+
+        nav .right a {
+            color: white;
+            font-size: 20px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav .right a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        nav .right a.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            nav .right {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            nav .right.active {
+                display: flex;
+            }
+
+            nav .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                gap: 5px;
+            }
+
+            nav .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                transition: transform 0.3s;
+            }
+
+            nav .menu-toggle.active .line1 {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            nav .menu-toggle.active .line2 {
+                opacity: 0;
+            }
+
+            nav .menu-toggle.active .line3 {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <!-- <img src="{% static 'core/images/logo.jpg' %}" alt="Logo"> -->
+            </div>
+            <div class="brand">QRCodeHub</div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="right">
+            <li><a href="{% url 'home' %}" class="active">Home</a></li>
+            <li><a href="{% url 'generate_qr' %}">Generate QR</a></li>
+            <li><a href="{% url 'scan_qr' %}">Scan QR</a></li>
+        </ul>
+    </nav>
+   
+    {% block content %}
+    {% endblock content %}
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.right');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

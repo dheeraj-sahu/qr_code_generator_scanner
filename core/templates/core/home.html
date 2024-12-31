@@ -1,0 +1,197 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<style>
+    /* General Reset */
+body, h1, h2, ul, li, ol, p, a, div, section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin: 0px -20px 0px -20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero .btn {
+    background-color: white;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid white;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+    color: white;
+    border: 2px solid #0056b3;
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+
+.features h2 {
+    font-size: 2em;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.features ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: #fff;
+}
+
+.features li {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    font-size: 1.2em;
+    text-align: left;
+    background-color: gray;
+
+}
+
+/* How It Works Section */
+.how-it-works {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+
+.how-it-works h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.how-it-works ol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.how-it-works li {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    font-size: 1.2em;
+    text-align: left;
+    background-color: gray;
+    color: #fff;
+
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .features li, .how-it-works li {
+        width: 90%;
+    }
+}
+
+</style>
+<div class="hero">
+    <h1>Welcome to QRCodeHub</h1>
+    <p>Your one-stop solution for generating and scanning QR codes seamlessly.</p>
+    <div class="cta-buttons">
+        <a href="{% url 'generate_qr' %}" class="btn">Generate QR Code</a>
+        <a href="{% url 'scan_qr' %}" class="btn">Scan QR Code</a>
+    </div>
+</div>
+
+<section class="features">
+    <h2>Features</h2>
+    <ul>
+        <li>Generate personalized QR codes for any text or data.</li>
+        <li>Scan QR codes directly from images.</li>
+        <li>Fast, secure, and easy to use.</li>
+    </ul>
+</section>
+
+<section class="how-it-works">
+    <h2>How It Works</h2>
+    <ol>
+        <li>Go to the "Generate QR" page to create your QR code.</li>
+        <li>Save the QR code to your device.</li>
+        <li>Scan any QR code using the "Scan QR" page.</li>
+    </ol>
+</section>
+
+<footer>
+    <p>&copy; 2024 QRCodeHub. All rights reserved.</p>
+</footer>
+{% endblock content %}
