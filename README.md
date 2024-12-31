@@ -96,7 +96,7 @@ Start the Django server to run the application locally.
 **Usage**
 
 ***Generate QR Code***
-   ```bash
+    ```bash
     Navigate to the Generate QR Code page.
 
     Enter a mobile number (10 digits) and text data.
@@ -104,7 +104,6 @@ Start the Django server to run the application locally.
     Click Generate to create the QR code.
 
     The QR code will be displayed on the page, and you can download it by clicking the Save QR button.
-
 
 
 ***Scan QR Code***
